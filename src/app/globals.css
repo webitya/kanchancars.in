@@ -83,7 +83,6 @@ h4,
 h5,
 h6 {
   font-weight: 300;
-  /* Light/Thin for luxury feel */
   letter-spacing: -0.5px;
 }
 
@@ -105,10 +104,11 @@ h6 {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -311,9 +311,28 @@ h6 {
 }
 
 .footer-bottom .container {
+  display: block;
+  /* Overriding previous flex if it existed on container */
+}
+
+.footer-bottom-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.developer-credit a {
+  color: #fff;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.developer-credit a:hover {
+  border-bottom-color: #fff;
+  opacity: 1;
 }
 
 .legal-links {
@@ -323,10 +342,10 @@ h6 {
 
 
 @media (max-width: 768px) {
-  .footer-bottom .container {
+  .footer-bottom-flex {
     flex-direction: column;
-    gap: 10px;
     text-align: center;
+    gap: 15px;
   }
 }
 
@@ -416,17 +435,18 @@ h6 {
 }
 
 .hero-title {
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 10vw, 5rem);
   margin-bottom: 1rem;
-  letter-spacing: 5px;
+  letter-spacing: clamp(2px, 2vw, 5px);
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: 300;
   margin-bottom: 2rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .hero-btn {
@@ -454,8 +474,8 @@ h6 {
 
 .car-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(20px, 5vw, 40px);
 }
 
 .contact-break {
@@ -551,16 +571,17 @@ h6 {
 /* Shared Page Styles */
 .page-title {
   text-align: center;
-  font-size: 3rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 
 .page-subtitle {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: clamp(30px, 10vw, 60px);
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  padding: 0 10px;
 }
 
 /* Contact Page Styles */
@@ -661,9 +682,9 @@ h6 {
 
 .inventory-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(20px, 5vw, 40px);
+  margin-top: 30px;
 }
 
 @media (max-width: 768px) {
@@ -686,7 +707,7 @@ h6 {
 .quick-btn {
   width: 40px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -732,5 +753,441 @@ h6 {
   .quick-btn svg {
     width: 16px;
     height: 16px;
+  }
+}
+
+/* Search Bar Styles */
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-form:focus-within {
+  border-color: var(--foreground);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  padding: 8px 12px;
+  width: 100%;
+  outline: none;
+  font-size: 0.85rem;
+}
+
+.search-submit {
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  padding: 0 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.search-submit:hover {
+  opacity: 1;
+}
+
+.search-clear {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  padding: 0 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-clear:hover {
+  color: #fff;
+}
+
+/* Suggestions Dropdown */
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #111;
+  border: 1px solid #333;
+  border-top: none;
+  list-style: none;
+  z-index: 2000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.suggestion-item:hover {
+  background: #1a1a1a;
+}
+
+.suggestion-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.suggestion-name {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.suggestion-type {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  background: #222;
+  padding: 2px 6px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.suggestion-category {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* Inventory Filter Bar */
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.inventory-header .page-title {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.btn-clear-all {
+  background: transparent;
+  border: 1px solid #444;
+  color: var(--text-secondary);
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-clear-all:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  background: var(--accent);
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  background: #0a0a0a;
+  padding: 30px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* Premium Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.dropdown-trigger {
+  background: var(--background);
+  border: 1px solid #333;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-trigger:hover,
+.dropdown-trigger.active {
+  border-color: #fff;
+  background: #111;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #111;
+  border: 1px solid #333;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  list-style: none;
+  z-index: 2000;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-option {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.dropdown-option:hover {
+  background: #222;
+}
+
+.dropdown-option.selected {
+  background: #333;
+  color: #fff;
+}
+
+/* Premium Custom Slider */
+.custom-slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.slider-value {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.slider-container {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-range-input {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #222;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  z-index: 2;
+  position: relative;
+}
+
+.custom-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.custom-range-input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.slider-track-progress {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: #fff;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.filter-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-input,
+.filter-select {
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.filter-clear {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  border-color: #fff;
+}
+
+.filter-range {
+  width: 100%;
+  accent-color: #fff;
+}
+
+.results-count {
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+  margin-left: auto;
+  /* Push menu to the right */
+}
+
+/* Navbar Search Specifics */
+.navbar-search-desktop {
+  margin-left: 20px;
+  /* Reduced gap */
+  max-width: 300px;
+  flex: 0 1 300px;
+  display: flex;
+}
+
+.mobile-search-container {
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+}
+
+@media (max-width: 1024px) {
+  .navbar-search-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .inventory-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .btn-clear-all {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
   }
 }

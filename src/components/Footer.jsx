@@ -41,10 +41,15 @@ export default function Footer() {
 
             <div className="footer-bottom">
                 <div className="container">
-                    <p>&copy; {new Date().getFullYear()} KanchanCars. All rights reserved.</p>
-                    <div className="legal-links">
-                        <Link href="#">Privacy Policy</Link>
-                        <Link href="#">Terms of Service</Link>
+                    <div className="footer-bottom-flex">
+                        <p>&copy; {new Date().getFullYear()} KanchanCars. All rights reserved.</p>
+                        <p className="developer-credit">
+                            Designed and Maintained by <a href="https://webitya.com" target="_blank" rel="noopener noreferrer" title="Webitya- Future of digital growth">Webitya</a>
+                        </p>
+                        <div className="legal-links">
+                            <Link href="#">Privacy Policy</Link>
+                            <Link href="#">Terms of Service</Link>
+                        </div>
                     </div>
                 </div>
             </div>

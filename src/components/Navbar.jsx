@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { useState } from 'react';
+import Search from './Search';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,11 @@ export default function Navbar() {
                     <Link href="/contact" className="nav-link">Contact</Link>
                 </div>
 
+                {/* Search Bar - Desktop */}
+                <div className="navbar-search-desktop">
+                    <Search />
+                </div>
+
                 {/* Hamburger Button */}
                 <button className="hamburger-btn" onClick={toggleMenu} aria-label="Toggle Menu">
                     <span className={`bar ${isOpen ? 'open' : ''}`}></span>
@@ -37,6 +43,9 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
                     <button className="close-btn" onClick={toggleMenu}>&times;</button>
+                    <div className="mobile-search-container">
+                        <Search placeholder="Search cars..." />
+                    </div>
                     <div className="mobile-nav-links">
                         <Link href="/inventory" className="mobile-nav-link" onClick={toggleMenu}>Inventory</Link>
                         <Link href="/services" className="mobile-nav-link" onClick={toggleMenu}>Services</Link>
