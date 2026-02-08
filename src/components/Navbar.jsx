@@ -1,10 +1,18 @@
 "use client";
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Search from './Search';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    }, [isOpen]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -31,10 +39,10 @@ export default function Navbar() {
                 </div>
 
                 {/* Hamburger Button */}
-                <button className="hamburger-btn" onClick={toggleMenu} aria-label="Toggle Menu">
-                    <span className={`bar ${isOpen ? 'open' : ''}`}></span>
-                    <span className={`bar ${isOpen ? 'open' : ''}`}></span>
-                    <span className={`bar ${isOpen ? 'open' : ''}`}></span>
+                <button className={`hamburger-btn ${isOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle Menu">
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
                 </button>
 
                 {/* Mobile Menu Overlay */}
@@ -42,7 +50,6 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                    <button className="close-btn" onClick={toggleMenu}>&times;</button>
                     <div className="mobile-search-container">
                         <Search placeholder="Search cars..." />
                     </div>
