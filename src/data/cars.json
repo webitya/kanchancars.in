@@ -1,17 +1,5 @@
 [
-    {
-        "id": 1,
-        "name": "Rolls-Royce Phantom",
-        "price": "₹9,50,00,000",
-        "category": "Sedan",
-        "image": "https://images.unsplash.com/photo-1631295868223-63265851d527?q=80&w=2669&auto=format&fit=crop",
-        "features": [
-            "V12 Engine",
-            "Starlight Headliner",
-            "Privacy Suite"
-        ],
-        "description": "The absolute pinnacle of luxury motoring. Experience silence and power in perfect harmony."
-    },
+    
     {
         "id": 2,
         "name": "Bentley Continental GT",
@@ -64,19 +52,7 @@
         ],
         "description": "The world's first Super Sport Utility Vehicle. Performance that defies physics."
     },
-    {
-        "id": 6,
-        "name": "Porsche 911 Turbo S",
-        "price": "₹3,35,00,000",
-        "category": "Sports",
-        "image": "https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=2670&auto=format&fit=crop",
-        "features": [
-            "Flat-6 Twin-Turbo",
-            "PDK Transmission",
-            "Active Aerodynamics"
-        ],
-        "description": "Timeless design meets relentless performance. The benchmark for sports cars."
-    },
+    
     {
         "id": 7,
         "name": "Tata Safari",
