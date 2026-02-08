@@ -12,11 +12,14 @@
   padding: 0;
 }
 
+html,
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   line-height: 1.6;
 }
 
@@ -164,12 +167,15 @@ h6 {
   position: fixed;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 280px;
+  /* Specific width for predictability */
+  max-width: 80%;
   height: 100vh;
   background-color: #000;
   z-index: 1050;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transform: translateX(105%);
+  /* Push slightly more out */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   padding-top: 80px;
@@ -706,15 +712,19 @@ h6 {
 /* Quick Contact Floating Buttons */
 .quick-contact {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 25px;
+  right: 25px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   z-index: 2000;
+  pointer-events: none;
+  /* Container itself shouldn't block */
 }
 
 .quick-btn {
+  pointer-events: all;
+  /* Buttons should be clickable */
   width: 50px;
   height: 50px;
   border-radius: 0;
