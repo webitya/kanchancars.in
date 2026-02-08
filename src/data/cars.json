@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "name": "Rolls-Royce Phantom",
+        "price": "₹9,50,00,000",
+        "category": "Sedan",
+        "image": "https://images.unsplash.com/photo-1631295868223-63265851d527?q=80&w=2669&auto=format&fit=crop",
+        "features": [
+            "V12 Engine",
+            "Starlight Headliner",
+            "Privacy Suite"
+        ],
+        "description": "The absolute pinnacle of luxury motoring. Experience silence and power in perfect harmony."
+    },
+    {
+        "id": 2,
+        "name": "Bentley Continental GT",
+        "price": "₹5,20,00,000",
+        "category": "Coupe",
+        "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2670&auto=format&fit=crop",
+        "features": [
+            "W12 Engine",
+            "Rotating Display",
+            "Diamond Knurling"
+        ],
+        "description": "A grand tourer that combines phenomenal power with exquisite craftsmanship."
+    },
+    {
+        "id": 3,
+        "name": "Mercedes-Maybach S-Class",
+        "price": "₹3,40,00,000",
+        "category": "Sedan",
+        "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2670&auto=format&fit=crop",
+        "features": [
+            "First Class Rear Suite",
+            "Burmester 4D Sound",
+            "E-Active Body Control"
+        ],
+        "description": "Sophisticated luxury with advanced technology for the ultimate chauffeur-driven experience."
+    },
+    {
+        "id": 4,
+        "name": "Range Rover SV Autobiography",
+        "price": "₹4,10,00,000",
+        "category": "SUV",
+        "image": "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?q=80&w=2574&auto=format&fit=crop",
+        "features": [
+            "Executive Class Seats",
+            "Meridian Signature Sound",
+            "All-Wheel Steering"
+        ],
+        "description": "Unrivaled capability meets bespoke luxury in this commanding SUV."
+    },
+    {
+        "id": 5,
+        "name": "Lamborghini Urus",
+        "price": "₹4,18,00,000",
+        "category": "SUV",
+        "image": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=2574&auto=format&fit=crop",
+        "features": [
+            "Twin-Turbo V8",
+            "ANIMA Selector",
+            "Carbon Ceramic Brakes"
+        ],
+        "description": "The world's first Super Sport Utility Vehicle. Performance that defies physics."
+    },
+    {
+        "id": 6,
+        "name": "Porsche 911 Turbo S",
+        "price": "₹3,35,00,000",
+        "category": "Sports",
+        "image": "https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=2670&auto=format&fit=crop",
+        "features": [
+            "Flat-6 Twin-Turbo",
+            "PDK Transmission",
+            "Active Aerodynamics"
+        ],
+        "description": "Timeless design meets relentless performance. The benchmark for sports cars."
+    },
+    {
+        "id": 7,
+        "name": "Tata Safari",
+        "price": "₹25,00,000",
+        "category": "SUV",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/2021_Tata_Safari_XZ%2B_%28India%29_front_view.jpg/1200px-2021_Tata_Safari_XZ%2B_%28India%29_front_view.jpg",
+        "features": [
+            "Panoramic Sunroof",
+            "ADAS",
+            "Captain Seats"
+        ],
+        "description": "Reclaim your life with the legendary SUV, now more premium than ever."
+    },
+    {
+        "id": 8,
+        "name": "Mahindra XUV700",
+        "price": "₹26,50,000",
+        "category": "SUV",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Mahindra_XUV700_AX7_L_Diesel_AT_AWD.jpg/1200px-Mahindra_XUV700_AX7_L_Diesel_AT_AWD.jpg",
+        "features": [
+            "Skyroof",
+            "Integrated Dual Screens",
+            "Smart Door Handles"
+        ],
+        "description": "Rush into the future with segment-leading technology and performance."
+    },
+    {
+        "id": 9,
+        "name": "Hyundai Creta",
+        "price": "₹19,00,000",
+        "category": "SUV",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Hyundai_Creta_SU2_facelift_001.jpg/1200px-Hyundai_Creta_SU2_facelift_001.jpg",
+        "features": [
+            "Bose Premium Sound",
+            "Ventilated Seats",
+            "BlueLink Connectivity"
+        ],
+        "description": "The ultimate SUV that sets the trend for Indian roads."
+    },
+    {
+        "id": 10,
+        "name": "Kia Seltos",
+        "price": "₹20,00,000",
+        "category": "SUV",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/2023_Kia_Seltos.jpg/1200px-2023_Kia_Seltos.jpg",
+        "features": [
+            "Heads-up Display",
+            "Smart Air Purifier",
+            "360 Camera"
+        ],
+        "description": "Badass by design. Crafted for the modern adventurer."
+    },
+    {
+        "id": 11,
+        "name": "Maruti Suzuki Grand Vitara",
+        "price": "₹19,50,000",
+        "category": "SUV",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Maruti_Suzuki_Grand_Vitara.jpg/1200px-Maruti_Suzuki_Grand_Vitara.jpg",
+        "features": [
+            "Strong Hybrid",
+            "AllGrip Select",
+            "Panoramic Sunroof"
+        ],
+        "description": "The new breed of SUVs. Intelligent, electric, hybrid."
+    },
+    {
+        "id": 12,
+        "name": "Mahindra Thar",
+        "price": "₹17,00,000",
+        "category": "SUV",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Mahindra_Thar_LX_Hard_Top_Diesel_MT_4WD.jpg/1200px-Mahindra_Thar_LX_Hard_Top_Diesel_MT_4WD.jpg",
+        "features": [
+            "4x4 Capability",
+            "Convertible Top",
+            "Touchscreen Infotainment"
+        ],
+        "description": "Explore the impossible. Born to roam anywhere."
+    }
+]
